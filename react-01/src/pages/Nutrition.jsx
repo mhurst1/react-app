@@ -1,44 +1,20 @@
 // Matthew Hurst | CSCE 242
 
-import { useState } from "react";
+import Navbar from "../component/Navbar";
 import "./Nutrition.css";
 
-export default function Nutrition() {
-  const [navOpen, setNavOpen] = useState(false);
+import Nutrition1 from "../images/Nutrition-1.jpg";
+import Nutrition2 from "../images/Nutrition-2.jpg";
+import Nutrition3 from "../images/Nutrition-3.jpg";
+import Nutrition4 from "../images/Nutrition-4.jpg";
 
+export default function Nutrition() {
   return (
     <div id="main-content">
-
-      {/* HEADER */}
-      <header id="main-header">
-        <h1>Fitness Planner</h1>
-
-        <button
-          id="nav-toggle"
-          aria-label="Toggle Navigation"
-          onClick={() => setNavOpen((prev) => !prev)}
-        >
-          ☰
-        </button>
-
-        <nav id="main-nav" className={navOpen ? "show" : ""}>
-          <div>
-            <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/about">About</a></li>
-              <li><a href="/exercises">Exercises</a></li>
-              <li><a href="/nutrition">Nutrition</a></li>
-              <li><a href="/tutorials">Tutorials</a></li>
-              <li><a href="/case-studies">Case Studies</a></li>
-            </ul>
-          </div>
-        </nav>
-      </header>
+      <Navbar />
 
       <main id="content">
-
-        {/* UPPER SECTION */}
-        <section className="upper-section">
+        <section className="nutrition-upper-section">
           <h1>Nutrition</h1>
           <h2>Fuel Your Life With Food.</h2>
           <p>
@@ -47,7 +23,6 @@ export default function Nutrition() {
           </p>
         </section>
 
-        {/* VIDEO SECTION */}
         <section className="nutrition-video">
           <h1>Understanding Macronutrients</h1>
           <p>Learn how protein, carbohydrates, and fats affect muscle growth and performance.</p>
@@ -62,37 +37,32 @@ export default function Nutrition() {
           />
         </section>
 
-        {/* CARDS SECTION */}
         <section className="middle-section">
           <section className="nutrition-cards">
             <div className="nutrition-frames">
-              <img src={`${process.env.PUBLIC_URL}/images/Nutrition-1.jpg`} alt="Nutrition Fundamentals" />
+              <img src={Nutrition1} alt="Nutrition Fundamentals" />
               <h2>Nutrition Fundamentals</h2>
               <p>Discover the basics of macro-nutrients, vitamins, and balanced eating.</p>
             </div>
-
             <div className="nutrition-frames">
-              <img src={`${process.env.PUBLIC_URL}/images/Nutrition-2.jpg`} alt="Healthy Meal Planning" />
+              <img src={Nutrition2} alt="Healthy Meal Planning" />
               <h2>Healthy Meal Planning</h2>
               <p>Learn to prepare nutritious, balanced meals for the week.</p>
             </div>
-
             <div className="nutrition-frames">
-              <img src={`${process.env.PUBLIC_URL}/images/Nutrition-3.jpg`} alt="Nutrient Timing" />
+              <img src={Nutrition3} alt="Nutrient Timing" />
               <h2>Nutrient Timing</h2>
               <p>Understand when to eat different types of foods for the best results.</p>
             </div>
-
             <div className="nutrition-frames">
-              <img src={`${process.env.PUBLIC_URL}/images/Nutrition-4.jpg`} alt="Supplements and Wellness" />
+              <img src={Nutrition4} alt="Supplements and Wellness" />
               <h2>Supplements & Wellness</h2>
               <p>Get insights into vitamins, minerals, and effective supplements.</p>
             </div>
           </section>
         </section>
 
-        {/* LOWER SECTION */}
-        <section className="lower-section">
+        <section className="nutrition-lower-section">
           <h1>Nutrition Guides & Tips</h1>
           <ul>
             <li>✅ Build balanced, satisfying meals</li>
@@ -101,14 +71,9 @@ export default function Nutrition() {
           </ul>
           <button type="button">Get Started</button>
         </section>
-
       </main>
 
-      {/* FOOTER */}
-      <footer id="main-footer">
-        <p>© mhurst1</p>
-      </footer>
-
+      <footer id="main-footer"><p>© mhurst1</p></footer>
     </div>
   );
 }

@@ -1,16 +1,15 @@
 // Matthew Hurst | CSCE 242
 
-// Come back and fix the json issues during the next phase of the project 
-// Json Implementation does not need to work yet 
+// fix jsons later
 
 import { useState, useEffect } from "react";
+import Navbar from "../component/Navbar";
 import "./Exercises.css";
 
 const EXERCISES_URL = "https://mhurst1.github.io/projects/part7/json/exercises.json";
 const CATEGORIES = ["All", "Upper Body", "Lower Body", "Full Body"];
 
 export default function Exercises() {
-  const [navOpen, setNavOpen] = useState(false);
   const [exercises, setExercises] = useState([]);
   const [activeCategory, setActiveCategory] = useState("All");
   const [loadError, setLoadError] = useState(false);
@@ -36,20 +35,7 @@ export default function Exercises() {
 
   return (
     <div id="main-content">
-      <header id="main-header">
-        <h1>Fitness Planner</h1>
-        <button id="nav-toggle" aria-label="Toggle Navigation" onClick={() => setNavOpen((prev) => !prev)}>☰</button>
-        <nav id="main-nav" className={navOpen ? "show" : ""}>
-          <div><ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/exercises">Exercises</a></li>
-            <li><a href="/nutrition">Nutrition</a></li>
-            <li><a href="/tutorials">Tutorials</a></li>
-            <li><a href="/case-studies">Case Studies</a></li>
-          </ul></div>
-        </nav>
-      </header>
+      <Navbar />
 
       <main id="content">
         <section className="exercises-upper-section">
@@ -94,9 +80,7 @@ export default function Exercises() {
         </section>
       </main>
 
-      <footer id="main-footer">
-        <p>© mhurst1</p>
-      </footer>
+      <footer id="main-footer"><p>© mhurst1</p></footer>
     </div>
   );
 }
