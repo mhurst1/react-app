@@ -1,15 +1,32 @@
 {
   "files": {
-    "main.css": "/react-app/static/css/main.380899db.css",
-    "main.js": "/react-app/static/js/main.416603ca.js",
+    "main.css": "/react-app/static/css/main.b63400ef.css",
+    "main.js": "/react-app/static/js/main.325e64f3.js",
+    "static/media/case-studies-4.jpg": "/react-app/static/media/case-studies-4.15ed83adb447b583937e.jpg",
+    "static/media/tutorials-3.jpg": "/react-app/static/media/tutorials-3.2ce06e53295ef1a74c71.jpg",
     "static/media/GymBackground3.jpg": "/react-app/static/media/GymBackground3.e03bf4ee0c3da0307011.jpg",
+    "static/media/tutorials-1.jpg": "/react-app/static/media/tutorials-1.f1849cebd5c38695e07b.jpg",
+    "static/media/case-studies-5.jpg": "/react-app/static/media/case-studies-5.8319263d8783f5facb4c.jpg",
+    "static/media/case-studies-3.jpg": "/react-app/static/media/case-studies-3.8ce3331480ac5a21e571.jpg",
+    "static/media/Nutrition-About.jpg": "/react-app/static/media/Nutrition-About.0c2733fb459ba7d740c6.jpg",
+    "static/media/Technique-About.jpg": "/react-app/static/media/Technique-About.713b4d356e05b8d3c899.jpg",
+    "static/media/Barbell.jpg": "/react-app/static/media/Barbell.e62296e8bfb7c689271f.jpg",
+    "static/media/Inspiration-About.jpg": "/react-app/static/media/Inspiration-About.e5fc44c1dde9e3193c33.jpg",
     "static/media/GymBackground4.jpg": "/react-app/static/media/GymBackground4.ad484af964ad1b98c4ea.jpg",
+    "static/media/case-studies-1.jpg": "/react-app/static/media/case-studies-1.b334dbeb835557350b18.jpg",
+    "static/media/case-studies-2.jpg": "/react-app/static/media/case-studies-2.88fcf8ffab4643968381.jpg",
+    "static/media/Training-About.jpg": "/react-app/static/media/Training-About.4d81245bc7c9a872edc1.jpg",
+    "static/media/Nutrition-3.jpg": "/react-app/static/media/Nutrition-3.b0d6ceb7ad28680a4b1d.jpg",
+    "static/media/Nutrition-2.jpg": "/react-app/static/media/Nutrition-2.3441c56a26cb02ef941e.jpg",
+    "static/media/tutorials-2.jpg": "/react-app/static/media/tutorials-2.84228ba5f602ff644c3a.jpg",
+    "static/media/Nutrition-4.jpg": "/react-app/static/media/Nutrition-4.10fa2831f8935c0d3361.jpg",
+    "static/media/Nutrition-1.jpg": "/react-app/static/media/Nutrition-1.c818eba53c2e38574910.jpg",
     "index.html": "/react-app/index.html",
-    "main.380899db.css.map": "/react-app/static/css/main.380899db.css.map",
-    "main.416603ca.js.map": "/react-app/static/js/main.416603ca.js.map"
+    "main.b63400ef.css.map": "/react-app/static/css/main.b63400ef.css.map",
+    "main.325e64f3.js.map": "/react-app/static/js/main.325e64f3.js.map"
   },
   "entrypoints": [
-    "static/css/main.380899db.css",
-    "static/js/main.416603ca.js"
+    "static/css/main.b63400ef.css",
+    "static/js/main.325e64f3.js"
   ]
 }
