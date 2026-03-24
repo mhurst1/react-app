@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/react-app/static/css/main.380899db.css",
-    "main.js": "/react-app/static/js/main.5915fff8.js",
+    "main.js": "/react-app/static/js/main.416603ca.js",
     "static/media/GymBackground3.jpg": "/react-app/static/media/GymBackground3.e03bf4ee0c3da0307011.jpg",
     "static/media/GymBackground4.jpg": "/react-app/static/media/GymBackground4.ad484af964ad1b98c4ea.jpg",
     "index.html": "/react-app/index.html",
     "main.380899db.css.map": "/react-app/static/css/main.380899db.css.map",
-    "main.5915fff8.js.map": "/react-app/static/js/main.5915fff8.js.map"
+    "main.416603ca.js.map": "/react-app/static/js/main.416603ca.js.map"
   },
   "entrypoints": [
     "static/css/main.380899db.css",
-    "static/js/main.5915fff8.js"
+    "static/js/main.416603ca.js"
   ]
 }
