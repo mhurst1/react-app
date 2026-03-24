@@ -4,7 +4,7 @@
 
 body {
     background: linear-gradient(0deg, rgb(61, 67, 75) 0%, rgb(0, 0, 0) 100%);
-    background-image: url(../../public/images/GymBackground4.jpg);
+    background-image: url(../images/GymBackground4.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
