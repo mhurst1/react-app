@@ -1,0 +1,22 @@
+/* Matthew Hurst | CSCE 242 */
+
+.influencer-card { text-decoration: none; color: white; }
+.upper-frame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(15, 19, 23, 0.8);
+    border-radius: 20px;
+    padding: 10px;
+    width: 269px;
+    height: 286px;
+    margin: auto;
+}
+.upper-frame img {
+    display: block;
+    width: 224px;
+    height: 209px;
+    object-fit: cover;
+    border-radius: 122px;
+}
+.upper-frame p { font-size: 24px; text-align: center; }

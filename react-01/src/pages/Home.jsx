@@ -3,8 +3,12 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";  // ← add this line
 import Navbar from "../component/Navbar";
+import Footer from "../component/Footer";
+import InfluencerCard from "../component/InfluencerCard";
 import "./Home.css";
 import BarbellImg from "../images/Barbell.jpg";
+
+const CREATINE_IMG = "https://www.blenderbottle.com/cdn/shop/articles/how-to-properly-use-creatine-for-optimal-results-641511.jpg?v=1741891268&width=2048";
 
 
 const CARDS_PER_VIEW = 3;
@@ -59,12 +63,7 @@ export default function Home() {
                 <p className="error">Influencer data could not be loaded.</p>
               ) : (
                 visibleCards.map((influencer, i) => (
-                  <a key={i} className="influencer-card" href={influencer.youtube} target="_blank" rel="noopener noreferrer">
-                    <div className="upper-frame">
-                      <img src={influencer.img_name} alt={influencer.name} />
-                      <p>{influencer.name}</p>
-                    </div>
-                  </a>
+                  <InfluencerCard key={i} img={influencer.img_name} name={influencer.name} youtube={influencer.youtube} />
                 ))
               )}
             </section>
@@ -80,10 +79,7 @@ export default function Home() {
 
         <section className="middle-section">
           <div id="middle-frame">
-            <img
-              src="https://www.blenderbottle.com/cdn/shop/articles/how-to-properly-use-creatine-for-optimal-results-641511.jpg?v=1741891268&width=2048"
-              alt="Nutrition"
-            />
+            <img src={CREATINE_IMG} alt="Nutrition" />
             <Link to="/nutrition"><button type="button">Learn More</button></Link>
           </div>
           <div id="middle-frame-txt">
@@ -104,9 +100,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer id="main-footer">
-        <p>© mhurst1</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

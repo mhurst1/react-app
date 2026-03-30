@@ -1,6 +1,8 @@
 // Matthew Hurst | CSCE 242
 
 import Navbar from "../component/Navbar";
+import Footer from "../component/Footer";
+import TutorialCard from "../component/TutorialCard";
 import "./Tutorials.css";
 
 import Tutorials1 from "../images/tutorials-1.jpg";
@@ -43,18 +45,7 @@ export default function Tutorials() {
         </section>
 
         {TUTORIALS.map((t, i) => (
-          <section className="middle-section" key={i}>
-            <div className="middle-frame">
-              <img src={t.img} alt={t.name} />
-              <div className="middle-frame-txt">
-                <h2>{t.name}</h2>
-                <p>{t.description}</p>
-                <a href={t.youtube} target="_blank" rel="noopener noreferrer">
-                  <button type="button">Watch on Youtube</button>
-                </a>
-              </div>
-            </div>
-          </section>
+          <TutorialCard key={i} img={t.img} name={t.name} description={t.description} youtube={t.youtube} />
         ))}
 
         <section className="lower-section">
@@ -70,7 +61,7 @@ export default function Tutorials() {
         </section>
       </main>
 
-      <footer id="main-footer"><p>© mhurst1</p></footer>
+      <Footer />
     </div>
   );
 }

@@ -1,6 +1,9 @@
 // Matthew Hurst | CSCE 242
 
 import Navbar from "../component/Navbar";
+import Footer from "../component/Footer";
+import FeaturedStudy from "../component/FeaturedStudy";
+import StudyCard from "../component/StudyCard";
 import "./CaseStudies.css";
 
 import CaseStudies1 from "../images/case-studies-1.jpg";
@@ -57,38 +60,20 @@ export default function CaseStudies() {
         </section>
 
         {MIDDLE_STUDIES.map((study, i) => (
-          <section className="case-middle-section" key={i}>
-            <div className="case-middle-frames">
-              <img src={study.img} alt={study.title} />
-              <div className="case-middle-frame-txt">
-                <h2>{study.title}</h2>
-                <p>{study.description}</p>
-                <a href={study.link} target="_blank" rel="noopener noreferrer">
-                  <button type="button">Read More</button>
-                </a>
-              </div>
-            </div>
-          </section>
+          <FeaturedStudy key={i} img={study.img} title={study.title} description={study.description} link={study.link} />
         ))}
 
         <section className="case-lower-section">
           <h1>Factors Impacting Gains</h1>
           <section className="case-cards">
             {LOWER_STUDIES.map((study, i) => (
-              <div className="case-lower-frames" key={i}>
-                <img src={study.img} alt={study.title} />
-                <h2>{study.title}</h2>
-                <p>{study.description}</p>
-                <a href={study.link} target="_blank" rel="noopener noreferrer">
-                  <button type="button">Read More</button>
-                </a>
-              </div>
+              <StudyCard key={i} img={study.img} title={study.title} description={study.description} link={study.link} />
             ))}
           </section>
         </section>
       </main>
 
-      <footer id="main-footer"><p>© mhurst1</p></footer>
+      <Footer />
     </div>
   );
 }

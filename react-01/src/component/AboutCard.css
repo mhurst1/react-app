@@ -1,0 +1,40 @@
+/* Matthew Hurst | CSCE 242 */
+
+.about-frames {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: rgba(15, 19, 23, 0.8);
+    width: 293px;
+    border-radius: 20px;
+    overflow: hidden;
+    padding-bottom: 15px;
+}
+.about-frames img {
+    display: block;
+    width: 293px;
+    height: 162px;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.about-frames h2 {
+    font-size: 22px;
+    text-align: center;
+    padding: 0 12px;
+    margin: 0;
+}
+.about-frames p {
+    font-size: 18px;
+    text-align: center;
+    padding: 0 12px;
+    margin: 0;
+}
+
+@media (min-width: 900px) {
+    .about-frames {
+        width: 293px;
+        flex-shrink: 0;
+    }
+}

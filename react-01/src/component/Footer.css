@@ -1,0 +1,13 @@
+/* Matthew Hurst | CSCE 242 */
+
+#main-footer {
+  background: rgba(61, 67, 75, 0.8);
+  text-align: center;
+  padding: 20px;
+}
+#main-footer p {
+  font-family: "Playfair Display";
+  font-size: 16px;
+  color: white;
+  margin: 0;
+}

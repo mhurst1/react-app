@@ -44,26 +44,6 @@ body {
     width: 100%;
     max-width: 950px;
 }
-.influencer-card { text-decoration: none; color: white; }
-.upper-frame {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: rgba(15, 19, 23, 0.8);
-    border-radius: 20px;
-    padding: 10px;
-    width: 269px;
-    height: 286px;
-    margin: auto;
-}
-.upper-frame img {
-    display: block;
-    width: 224px;
-    height: 209px;
-    object-fit: cover;
-    border-radius: 122px;
-}
-.upper-frame p { font-size: 24px; text-align: center; }
 #frame-description {
     text-align: center;
     font-size: 24px;
@@ -71,7 +51,13 @@ body {
     padding: 20px;
     background: rgba(15, 19, 23, 0.8);
     width: 77%;
+    max-width: 900px;
     margin: auto;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+}
+.upper-section {
+    padding-bottom: 40px;
 }
 .middle-section {
     display: flex;
@@ -142,9 +128,6 @@ body {
     cursor: pointer;
 }
 #lower-frame button:hover { background: white; color: rgb(53, 127, 125); border: 1px solid rgb(53, 127, 125); }
-#main-footer { background: rgba(61, 67, 75, 0.8); text-align: center; padding: 20px; }
-#main-footer p { font-family: "Playfair Display"; font-size: 16px; }
-
 @media (min-width: 900px) {
     .middle-section { flex-direction: row; text-align: left; }
 }
@@ -155,4 +138,5 @@ body {
     #middle-frame img { width: 100%; height: auto; border-radius: 30px; }
     #lower-frame img { width: 100%; height: auto; }
     #middle-frame-txt { width: auto; height: auto; }
+    #frame-description { width: 92%; font-size: 18px; }
 }

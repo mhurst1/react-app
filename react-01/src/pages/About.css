@@ -64,37 +64,6 @@ body {
     align-items: center;
     gap: 20px;
 }
-.about-frames {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    background: rgba(15, 19, 23, 0.8);
-    width: 293px;
-    border-radius: 20px;
-    overflow: hidden;
-    padding-bottom: 15px;
-}
-.about-frames img {
-    display: block;
-    width: 293px;
-    height: 162px;
-    object-fit: cover;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-}
-.about-frames h2 {
-    font-size: 22px;
-    text-align: center;
-    padding: 0 12px;
-    margin: 0;
-}
-.about-frames p {
-    font-size: 18px;
-    text-align: center;
-    padding: 0 12px;
-    margin: 0;
-}
 .lower-section {
     display: flex;
     flex-direction: column;
@@ -188,15 +157,6 @@ body {
     text-align: center;
     font-weight: 600;
 }
-#main-footer {
-    background: rgba(61, 67, 75, 0.8);
-    text-align: center;
-    padding: 20px;
-}
-#main-footer p {
-    font-family: "Playfair Display";
-    font-size: 16px;
-}
 @media (min-width: 900px) {
     .about-cards {
         flex-direction: row;
@@ -204,10 +164,7 @@ body {
         gap: 88px;
         align-items: flex-start;
     }
-    .about-frames {
-        width: 293px;
-        flex-shrink: 0;
-    }
+
     .lower-section {
         flex-direction: row;
         text-align: left;

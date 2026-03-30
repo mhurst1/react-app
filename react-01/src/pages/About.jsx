@@ -2,12 +2,20 @@
 
 import { useState } from "react";
 import Navbar from "../component/Navbar";
+import Footer from "../component/Footer";
+import AboutCard from "../component/AboutCard";
 import "./About.css";
 
 import TrainingImg from "../images/Training-About.jpg";
 import TechniqueImg from "../images/Technique-About.jpg";
 import NutritionAboutImg from "../images/Nutrition-About.jpg";
 import InspirationImg from "../images/Inspiration-About.jpg";
+
+const ABOUT_CARDS = [
+  { img: TrainingImg, alt: "Structured Training", title: "Structured Training", description: "Clear instructed training, that you can follow anytime, anywhere." },
+  { img: TechniqueImg, alt: "Technique and Education", title: "Technique & Education", description: "Simple explanations, form cues, and tutorials to help you move better and avoid injury." },
+  { img: NutritionAboutImg, alt: "Nutrition Fundamentals", title: "Nutrition Fundamentals", description: "No extremes- just practical guidance on protein, carbs, fats, and fueling performance." },
+];
 
 export default function About() {
   const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
@@ -67,21 +75,9 @@ export default function About() {
         <section className="lower-middle">
           <h1>What We Offer</h1>
           <section className="about-cards">
-            <div className="about-frames">
-              <img src={TrainingImg} alt="Structured Training" />
-              <h2>Structured Training</h2>
-              <p>Clear instructed training, that you can follow anytime, anywhere.</p>
-            </div>
-            <div className="about-frames">
-              <img src={TechniqueImg} alt="Technique and Education" />
-              <h2>Technique & Education</h2>
-              <p>Simple explanations, form cues, and tutorials to help you move better and avoid injury.</p>
-            </div>
-            <div className="about-frames">
-              <img src={NutritionAboutImg} alt="Nutrition Fundamentals" />
-              <h2>Nutrition Fundamentals</h2>
-              <p>No extremes- just practical guidance on protein, carbs, fats, and fueling performance.</p>
-            </div>
+            {ABOUT_CARDS.map((card, i) => (
+              <AboutCard key={i} img={card.img} alt={card.alt} title={card.title} description={card.description} />
+            ))}
           </section>
         </section>
 
@@ -113,7 +109,7 @@ export default function About() {
         </section>
       </main>
 
-      <footer id="main-footer"><p>© mhurst1</p></footer>
+      <Footer />
     </div>
   );
 }

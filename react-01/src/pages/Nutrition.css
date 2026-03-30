@@ -35,25 +35,6 @@ body {
     align-items: center;
     gap: 20px;
 }
-.nutrition-frames {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    background: rgba(15, 19, 23, 0.8);
-    width: 256px;
-    height: 453px;
-    border-radius: 20px;
-}
-.nutrition-frames img {
-    display: block;
-    width: 256px;
-    height: 248px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-}
-.nutrition-frames h2 { font-size: 22px; text-align: center; }
-.nutrition-frames p { font-size: 18px; text-align: center; }
 
 .nutrition-lower-section {
     display: flex;
@@ -75,9 +56,6 @@ body {
     cursor: pointer;
 }
 .nutrition-lower-section button:hover { background: rgba(53, 127, 125, 0.8); border: 1px solid rgb(15,19,23); }
-
-#main-footer { background: rgba(61, 67, 75, 0.8); text-align: center; padding: 20px; }
-#main-footer p { font-family: "Playfair Display"; font-size: 16px; }
 
 @media (min-width: 900px) {
     .nutrition-cards { padding-top: 60px; flex-direction: row; justify-content: center; gap: 16px; }

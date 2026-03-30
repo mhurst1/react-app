@@ -1,11 +1,37 @@
 // Matthew Hurst | CSCE 242
 
-// fix jsons later
-
 import { useState, useEffect } from "react";
 import Navbar from "../component/Navbar";
+import Footer from "../component/Footer";
+import ExerciseCard from "../component/ExerciseCard";
 import "./Exercises.css";
 
+import ExerciseSquat from "../images/Exercises-Squat.jpg";
+import ExerciseBench from "../images/Exercises-Bench.jpg";
+import ExerciseDB from "../images/Exercises-DB.jpg";
+import ExerciseLunge from "../images/Exercises-Lunge.jpg";
+import ExerciseCrunch from "../images/Exercises-Crunch.jpg";
+import ExercisePulldowns from "../images/Exercises-Pulldowns.jpg";
+import ExerciseDeadlift from "../images/Exercises-Romainian-Deadlift.jpg";
+import ExerciseOverheadPress from "../images/Exercises-Overhead-Press.jpg";
+
+const EXERCISE_IMAGES = {
+  "Exercises-Squat.jpg": ExerciseSquat,
+  "Exercises-Bench.jpg": ExerciseBench,
+  "Exercises-DB.jpg": ExerciseDB,
+  "Exercises-Lunge.jpg": ExerciseLunge,
+  "Exercises-Crunch.jpg": ExerciseCrunch,
+  "Exercises-Pulldowns.jpg": ExercisePulldowns,
+  "Exercises-Romainian-Deadlift.jpg": ExerciseDeadlift,
+  "Exercises-Overhead-Press.jpg": ExerciseOverheadPress,
+};
+
+function resolveImage(imgPath) {
+  const filename = imgPath.split("/").pop();
+  return EXERCISE_IMAGES[filename] || imgPath;
+}
+
+// Get the JSON Data from my initial site 
 const EXERCISES_URL = "https://mhurst1.github.io/projects/part7/json/exercises.json";
 const CATEGORIES = ["All", "Upper Body", "Lower Body", "Full Body"];
 
@@ -61,13 +87,7 @@ export default function Exercises() {
               <p className="error">Exercise data could not be loaded.</p>
             ) : (
               visibleExercises.map((exercise, i) => (
-                <a key={i} className="exercise-card" href={exercise.link || "/tutorials"} target="_blank" rel="noopener noreferrer">
-                  <div className="exercise-frames">
-                    <img src={exercise.img_name} alt={exercise.name} />
-                    <h2>{exercise.name}</h2>
-                    <p>{exercise.description}</p>
-                  </div>
-                </a>
+                <ExerciseCard key={i} img={resolveImage(exercise.img_name)} name={exercise.name} description={exercise.description} link={exercise.link} />
               ))
             )}
           </section>
@@ -80,7 +100,7 @@ export default function Exercises() {
         </section>
       </main>
 
-      <footer id="main-footer"><p>© mhurst1</p></footer>
+      <Footer />
     </div>
   );
 }

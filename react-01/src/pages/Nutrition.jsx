@@ -1,12 +1,21 @@
 // Matthew Hurst | CSCE 242
 
 import Navbar from "../component/Navbar";
+import Footer from "../component/Footer";
+import NutritionCard from "../component/NutritionCard";
 import "./Nutrition.css";
 
 import Nutrition1 from "../images/Nutrition-1.jpg";
 import Nutrition2 from "../images/Nutrition-2.jpg";
 import Nutrition3 from "../images/Nutrition-3.jpg";
 import Nutrition4 from "../images/Nutrition-4.jpg";
+
+const NUTRITION_CARDS = [
+  { img: Nutrition1, alt: "Nutrition Fundamentals", title: "Nutrition Fundamentals", description: "Discover the basics of macro-nutrients, vitamins, and balanced eating." },
+  { img: Nutrition2, alt: "Healthy Meal Planning", title: "Healthy Meal Planning", description: "Learn to prepare nutritious, balanced meals for the week." },
+  { img: Nutrition3, alt: "Nutrient Timing", title: "Nutrient Timing", description: "Understand when to eat different types of foods for the best results." },
+  { img: Nutrition4, alt: "Supplements and Wellness", title: "Supplements & Wellness", description: "Get insights into vitamins, minerals, and effective supplements." },
+];
 
 export default function Nutrition() {
   return (
@@ -39,26 +48,9 @@ export default function Nutrition() {
 
         <section className="middle-section">
           <section className="nutrition-cards">
-            <div className="nutrition-frames">
-              <img src={Nutrition1} alt="Nutrition Fundamentals" />
-              <h2>Nutrition Fundamentals</h2>
-              <p>Discover the basics of macro-nutrients, vitamins, and balanced eating.</p>
-            </div>
-            <div className="nutrition-frames">
-              <img src={Nutrition2} alt="Healthy Meal Planning" />
-              <h2>Healthy Meal Planning</h2>
-              <p>Learn to prepare nutritious, balanced meals for the week.</p>
-            </div>
-            <div className="nutrition-frames">
-              <img src={Nutrition3} alt="Nutrient Timing" />
-              <h2>Nutrient Timing</h2>
-              <p>Understand when to eat different types of foods for the best results.</p>
-            </div>
-            <div className="nutrition-frames">
-              <img src={Nutrition4} alt="Supplements and Wellness" />
-              <h2>Supplements & Wellness</h2>
-              <p>Get insights into vitamins, minerals, and effective supplements.</p>
-            </div>
+            {NUTRITION_CARDS.map((card, i) => (
+              <NutritionCard key={i} img={card.img} alt={card.alt} title={card.title} description={card.description} />
+            ))}
           </section>
         </section>
 
@@ -73,7 +65,7 @@ export default function Nutrition() {
         </section>
       </main>
 
-      <footer id="main-footer"><p>© mhurst1</p></footer>
+      <Footer />
     </div>
   );
 }
