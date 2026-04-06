@@ -2,14 +2,15 @@
 
 import "./ExerciseCard.css";
 
-export default function ExerciseCard({ img, name, description, link }) {
+export default function ExerciseCard({ img, name, description, onClick }) {
   return (
-    <a className="exercise-card" href={link || "/tutorials"} target="_blank" rel="noopener noreferrer">
+    <button className="exercise-card" onClick={onClick} aria-label={`View details for ${name}`}>
       <div className="exercise-frames">
         <img src={img} alt={name} />
         <h2>{name}</h2>
         <p>{description}</p>
+        <span className="view-details">View Details &rarr;</span>
       </div>
-    </a>
+    </button>
   );
 }

@@ -1,29 +1,45 @@
 /* Matthew Hurst | CSCE 242 */
 
 .exercise-card {
-    text-decoration: none;
-    color: white;
-    display: flex;
-    justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
-.exercise-card:hover { transform: translateY(-5px); transition: transform 0.2s ease; }
+.exercise-card:hover .exercise-frames {
+  transform: translateY(-6px);
+  border-color: rgba(53, 127, 125, 0.8);
+}
 .exercise-frames {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: rgba(15,19,23,0.8);
-    width: 293px;
-    min-height: 330px;
-    border-radius: 20px;
-    overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(15, 19, 23, 0.85);
+  width: 293px;
+  min-height: 330px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(53, 127, 125, 0.3);
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 .exercise-frames img {
-    display: block;
-    height: 165px;
-    width: 293px;
-    object-fit: cover;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+  display: block;
+  height: 165px;
+  width: 293px;
+  object-fit: cover;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 .exercise-frames h2 { font-size: 22px; text-align: center; padding: 0 12px; }
-.exercise-frames p { text-align: center; font-size: 18px; padding: 0 12px 15px 12px; }
+.exercise-frames p { text-align: center; font-size: 16px; padding: 0 12px 10px 12px; color: #b0bec5; }
+.view-details {
+  margin-top: auto;
+  margin-bottom: 14px;
+  font-size: 13px;
+  color: rgb(53, 200, 180);
+  letter-spacing: 0.5px;
+}

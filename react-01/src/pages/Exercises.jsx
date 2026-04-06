@@ -1,44 +1,21 @@
 // Matthew Hurst | CSCE 242
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ExerciseCard from "../component/ExerciseCard";
+import ExerciseModal from "../component/ExerciseModal";
 import "./Exercises.css";
 
-import ExerciseSquat from "../images/Exercises-Squat.jpg";
-import ExerciseBench from "../images/Exercises-Bench.jpg";
-import ExerciseDB from "../images/Exercises-DB.jpg";
-import ExerciseLunge from "../images/Exercises-Lunge.jpg";
-import ExerciseCrunch from "../images/Exercises-Crunch.jpg";
-import ExercisePulldowns from "../images/Exercises-Pulldowns.jpg";
-import ExerciseDeadlift from "../images/Exercises-Romainian-Deadlift.jpg";
-import ExerciseOverheadPress from "../images/Exercises-Overhead-Press.jpg";
-
-const EXERCISE_IMAGES = {
-  "Exercises-Squat.jpg": ExerciseSquat,
-  "Exercises-Bench.jpg": ExerciseBench,
-  "Exercises-DB.jpg": ExerciseDB,
-  "Exercises-Lunge.jpg": ExerciseLunge,
-  "Exercises-Crunch.jpg": ExerciseCrunch,
-  "Exercises-Pulldowns.jpg": ExercisePulldowns,
-  "Exercises-Romainian-Deadlift.jpg": ExerciseDeadlift,
-  "Exercises-Overhead-Press.jpg": ExerciseOverheadPress,
-};
-
-function resolveImage(imgPath) {
-  const filename = imgPath.split("/").pop();
-  return EXERCISE_IMAGES[filename] || imgPath;
-}
-
-// Get the JSON Data from my initial site 
-const EXERCISES_URL = "https://mhurst1.github.io/projects/part7/json/exercises.json";
+const SERVER_URL = process.env.REACT_APP_SERVER_URL || "https://fitness-server-xobi.onrender.com";
+const EXERCISES_URL = `${SERVER_URL}/api/exercises`;
 const CATEGORIES = ["All", "Upper Body", "Lower Body", "Full Body"];
 
 export default function Exercises() {
   const [exercises, setExercises] = useState([]);
   const [activeCategory, setActiveCategory] = useState("All");
   const [loadError, setLoadError] = useState(false);
+  const [selectedExercise, setSelectedExercise] = useState(null);
 
   useEffect(() => {
     async function loadExercises() {
@@ -54,6 +31,8 @@ export default function Exercises() {
     }
     loadExercises();
   }, []);
+
+  const closeModal = useCallback(() => setSelectedExercise(null), []);
 
   const visibleExercises = activeCategory === "All"
     ? exercises
@@ -75,7 +54,12 @@ export default function Exercises() {
 
         <nav id="workout-nav">
           {CATEGORIES.map((category) => (
-            <button key={category} type="button" onClick={() => setActiveCategory(category)}>
+            <button
+              key={category}
+              type="button"
+              className={activeCategory === category ? "active" : ""}
+              onClick={() => setActiveCategory(category)}
+            >
               {category}
             </button>
           ))}
@@ -85,9 +69,17 @@ export default function Exercises() {
           <section className="exercise-cards" id="exercise-list">
             {loadError ? (
               <p className="error">Exercise data could not be loaded.</p>
+            ) : exercises.length === 0 ? (
+              <p className="loading">Loading exercises...</p>
             ) : (
-              visibleExercises.map((exercise, i) => (
-                <ExerciseCard key={i} img={resolveImage(exercise.img_name)} name={exercise.name} description={exercise.description} link={exercise.link} />
+              visibleExercises.map((exercise) => (
+                <ExerciseCard
+                  key={exercise._id}
+                  img={`${SERVER_URL}/${exercise.img_name}`}
+                  name={exercise.name}
+                  description={exercise.description}
+                  onClick={() => setSelectedExercise(exercise)}
+                />
               ))
             )}
           </section>
@@ -101,6 +93,14 @@ export default function Exercises() {
       </main>
 
       <Footer />
+
+      {selectedExercise && (
+        <ExerciseModal
+          exercise={selectedExercise}
+          serverUrl={SERVER_URL}
+          onClose={closeModal}
+        />
+      )}
     </div>
   );
 }

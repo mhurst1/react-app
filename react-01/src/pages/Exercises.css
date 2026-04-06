@@ -35,7 +35,8 @@ body {
     border: 1px solid rgb(53, 127, 125);
     cursor: pointer;
 }
-#workout-nav button:hover { background: rgba(53, 127, 125, 0.8); border: 1px solid rgb(15,19,23); }
+#workout-nav button:hover,
+#workout-nav button.active { background: rgba(53, 127, 125, 0.8); border: 1px solid rgb(15,19,23); }
 
 #content { width: min(1200px, 92%); margin: auto; }
 
@@ -74,7 +75,11 @@ body {
 }
 .start-training-btn:hover { background: white; color: rgb(53, 127, 125); border: 1px solid rgb(53, 127, 125); }
 .error { text-align: center; font-size: 20px; color: #ffb3b3; }
+.loading { text-align: center; font-size: 20px; color: #90a4ae; }
 
+@media (min-width: 640px) {
+    .exercise-cards { grid-template-columns: repeat(2, 1fr); justify-items: center; }
+}
 @media (min-width: 900px) {
     #workout-nav { flex-direction: row; justify-content: center; }
     .exercise-cards { grid-template-columns: repeat(3, 1fr); }
