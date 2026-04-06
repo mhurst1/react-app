@@ -11,6 +11,9 @@ body {
     margin: 0;
     font-family: "Montserrat";
 }
+#content {
+    padding-top: 20px;
+}
 #content h1 {
     font-size: 36px;
     text-align: center;
@@ -45,19 +48,19 @@ body {
     max-width: 950px;
 }
 #frame-description {
+    display: inline-block;
     text-align: center;
     font-size: 24px;
     border-radius: 20px;
     padding: 20px;
     background: rgba(15, 19, 23, 0.8);
-    width: 77%;
-    max-width: 900px;
-    margin: auto;
+    max-width: var(--desc-max-width);
     box-sizing: border-box;
     overflow-wrap: break-word;
 }
 .upper-section {
     padding-bottom: 40px;
+    text-align: center;
 }
 .middle-section {
     display: flex;
@@ -72,6 +75,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    padding-top: 60px;
 }
 #middle-frame img {
     display: block;
@@ -110,6 +114,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 15px;
+    padding-bottom: 20px;
 }
 #lower-frame img {
     display: block;
@@ -129,14 +134,15 @@ body {
 }
 #lower-frame button:hover { background: white; color: rgb(53, 127, 125); border: 1px solid rgb(53, 127, 125); }
 @media (min-width: 900px) {
-    .middle-section { flex-direction: row; text-align: left; }
+    .middle-section { flex-direction: row; align-items: center; flex-wrap: nowrap; text-align: left; }
 }
 @media (max-width: 899px) {
-    .slideshow-wrapper { flex-direction: column; }
-    .cards { grid-template-columns: 1fr; max-width: 320px; }
+    .slideshow-wrapper { flex-direction: row; align-items: center; justify-content: center; gap: 20px; }
+    .cards { grid-template-columns: 1fr; width: 269px; flex-shrink: 0; }
+    .cards > *:nth-child(2), .cards > *:nth-child(3) { display: none; }
     #middle-frame img, #lower-frame img, #middle-frame-txt { max-width: 100%; }
     #middle-frame img { width: 100%; height: auto; border-radius: 30px; }
     #lower-frame img { width: 100%; height: auto; }
     #middle-frame-txt { width: auto; height: auto; }
-    #frame-description { width: 92%; font-size: 18px; }
+    #frame-description { --desc-max-width: 92%; font-size: 18px; }
 }
