@@ -27,19 +27,19 @@ export default function About() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const data = new FormData();
-    Object.entries(formData).forEach(([key, val]) => data.append(key, val));
-    data.append("_captcha", "false");
-    data.append("_template", "table");
+    const SERVER_URL = process.env.REACT_APP_SERVER_URL || "https://fitness-server-xobi.onrender.com";
     try {
-      const response = await fetch("https://formsubmit.co/r.matthewhurst@gmail.com", {
-        method: "POST", body: data, headers: { Accept: "application/json" },
+      const response = await fetch(`${SERVER_URL}/api/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
-      if (response.ok) {
+      const result = await response.json();
+      if (result.success) {
         setFormMessage({ text: "Success! Your message has been sent.", color: "#7CFC98" });
         setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
-        setFormMessage({ text: "Error: Please make sure all fields are filled out correctly.", color: "#ffb3b3" });
+        setFormMessage({ text: result.error || "Error: Could not send message.", color: "#ffb3b3" });
       }
     } catch {
       setFormMessage({ text: "Error: Message could not be sent right now.", color: "#ffb3b3" });

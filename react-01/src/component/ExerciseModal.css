@@ -1,0 +1,147 @@
+/* Matthew Hurst | CSCE 242 */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+}
+
+.modal-card {
+  position: relative;
+  background: rgba(15, 19, 23, 0.97);
+  border: 1px solid rgba(53, 127, 125, 0.6);
+  border-radius: 22px;
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+  animation: modalIn 0.2s ease;
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.93) translateY(16px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background: rgba(53, 127, 125, 0.2);
+  border: 1px solid rgba(53, 127, 125, 0.5);
+  border-radius: 50%;
+  color: white;
+  font-size: 22px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  line-height: 1;
+  z-index: 1;
+  transition: background 0.2s;
+}
+.modal-close:hover { background: rgba(53, 127, 125, 0.6); }
+
+.modal-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 22px 22px 0 0;
+  display: block;
+}
+
+.modal-body {
+  padding: 24px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modal-title {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  color: #fff;
+  margin: 0;
+}
+
+.modal-badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.badge.category {
+  background: rgba(53, 127, 125, 0.2);
+  border: 1px solid rgb(53, 127, 125);
+  color: rgb(53, 200, 180);
+}
+.badge.diff-beginner {
+  background: rgba(76, 175, 80, 0.2);
+  border: 1px solid #4caf50;
+  color: #81c784;
+}
+.badge.diff-intermediate {
+  background: rgba(255, 165, 0, 0.2);
+  border: 1px solid orange;
+  color: #ffb74d;
+}
+.badge.diff-advanced {
+  background: rgba(244, 67, 54, 0.2);
+  border: 1px solid #f44336;
+  color: #e57373;
+}
+
+.modal-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.detail-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgb(53, 127, 125);
+  font-weight: 600;
+}
+.detail-value {
+  font-size: 16px;
+  color: #dce8f0;
+  line-height: 1.5;
+}
+
+.modal-watch-btn {
+  display: inline-block;
+  background: rgb(53, 127, 125);
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  border: 1px solid white;
+  transition: background 0.2s, color 0.2s;
+  margin-top: 4px;
+}
+.modal-watch-btn:hover {
+  background: white;
+  color: rgb(53, 127, 125);
+  border-color: rgb(53, 127, 125);
+}
+
+@media (min-width: 900px) {
+  .modal-img { height: 260px; }
+}

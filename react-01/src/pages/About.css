@@ -81,8 +81,9 @@ body {
 #lower-frame img {
     display: block;
     height: 216px;
-    width: 384px;
+    width: min(384px, 90vw);
     border-radius: 30px;
+    object-fit: cover;
 }
 #lower-frame-txt {
     text-align: center;
