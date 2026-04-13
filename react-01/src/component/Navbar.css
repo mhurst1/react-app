@@ -36,6 +36,13 @@
 #main-nav a:hover {
     color: rgb(53, 127, 125);
 }
+.nav-workouts-link {
+    color: rgb(53, 200, 180) !important;
+    font-weight: 600;
+}
+.nav-workouts-link:hover {
+    color: white !important;
+}
 #main-nav.show {
     display: flex;
 }

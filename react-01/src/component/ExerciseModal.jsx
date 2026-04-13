@@ -1,9 +1,12 @@
 // Matthew Hurst | CSCE 242
 
 import { useEffect } from "react";
+import { useWorkout } from "../context/WorkoutContext";
 import "./ExerciseModal.css";
 
 export default function ExerciseModal({ exercise, serverUrl, onClose }) {
+  const { addExercise, removeExercise, isInWorkout } = useWorkout();
+  const saved = exercise ? isInWorkout(exercise._id) : false;
   // Close on Escape key
   useEffect(() => {
     function handleKey(e) {
@@ -44,14 +47,13 @@ export default function ExerciseModal({ exercise, serverUrl, onClose }) {
             <span className="detail-value">{exercise.description}</span>
           </div>
 
-          <a
-            href={exercise.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="modal-watch-btn"
+          <button
+            className={`modal-workout-btn ${saved ? "saved" : ""}`}
+            onClick={() => saved ? removeExercise(exercise._id) : addExercise(exercise)}
           >
-            &#9654; Watch Tutorial
-          </a>
+            {saved ? "✓ Added to My Workout" : "+ Add to My Workout"}
+          </button>
+
         </div>
       </div>
     </div>

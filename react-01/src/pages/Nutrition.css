@@ -45,7 +45,9 @@ body {
 .nutrition-lower-section h1 { font-family: "Playfair Display"; font-size: 32px; text-align: center; }
 .nutrition-lower-section ul { list-style-type: none; padding-bottom: 20px; margin: 0; display: inline-block; text-align: left; }
 .nutrition-lower-section li { font-size: 18px; }
-.nutrition-lower-section button {
+.nutrition-lower-section button,
+.get-started-btn {
+    display: inline-block;
     background: rgba(15,19,23,0.8);
     width: 269px;
     height: 47px;
@@ -54,8 +56,13 @@ body {
     border-radius: 30px;
     border: 1px solid rgb(53, 127, 125);
     cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    line-height: 47px;
+    font-family: "Montserrat", sans-serif;
 }
-.nutrition-lower-section button:hover { background: rgba(53, 127, 125, 0.8); border: 1px solid rgb(15,19,23); }
+.nutrition-lower-section button:hover,
+.get-started-btn:hover { background: rgba(53, 127, 125, 0.8); border: 1px solid rgb(15,19,23); }
 
 @media (min-width: 900px) {
     .nutrition-cards { padding-top: 60px; flex-direction: row; justify-content: center; gap: 16px; }

@@ -122,24 +122,33 @@
   line-height: 1.5;
 }
 
-.modal-watch-btn {
-  display: inline-block;
-  background: rgb(53, 127, 125);
-  color: #fff;
-  text-decoration: none;
-  padding: 12px 28px;
+.modal-workout-btn {
+  width: 100%;
+  padding: 13px 0;
   border-radius: 30px;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 600;
-  text-align: center;
-  border: 1px solid white;
-  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+  border: 1px solid rgb(53, 127, 125);
+  background: rgb(53, 127, 125);
+  color: #fff;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
   margin-top: 4px;
 }
-.modal-watch-btn:hover {
+.modal-workout-btn:hover {
   background: white;
   color: rgb(53, 127, 125);
-  border-color: rgb(53, 127, 125);
+}
+.modal-workout-btn.saved {
+  background: rgba(53, 127, 125, 0.15);
+  border-color: rgb(53, 200, 180);
+  color: rgb(53, 200, 180);
+}
+.modal-workout-btn.saved:hover {
+  background: rgba(239, 83, 80, 0.15);
+  border-color: #ef5350;
+  color: #ef9a9a;
 }
 
 @media (min-width: 900px) {

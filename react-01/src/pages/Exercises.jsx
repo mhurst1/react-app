@@ -1,10 +1,12 @@
 // Matthew Hurst | CSCE 242
 
 import { useState, useEffect, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ExerciseCard from "../component/ExerciseCard";
 import ExerciseModal from "../component/ExerciseModal";
+import AddExerciseForm from "../component/AddExerciseForm";
 import "./Exercises.css";
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL || "https://fitness-server-xobi.onrender.com";
@@ -12,6 +14,7 @@ const EXERCISES_URL = `${SERVER_URL}/api/exercises`;
 const CATEGORIES = ["All", "Upper Body", "Lower Body", "Full Body"];
 
 export default function Exercises() {
+  const navigate = useNavigate();
   const [exercises, setExercises] = useState([]);
   const [activeCategory, setActiveCategory] = useState("All");
   const [loadError, setLoadError] = useState(false);
@@ -85,10 +88,15 @@ export default function Exercises() {
           </section>
         </section>
 
+        <AddExerciseForm
+          serverUrl={SERVER_URL}
+          onExerciseAdded={(newEx) => setExercises((prev) => [...prev, newEx])}
+        />
+
         <section className="exercises-lower-section">
           <h1>Master the Basics. Crush Your Goals.</h1>
           <p>Follow our step by step video tutorials to improve form, increase strength, and avoid injury.</p>
-          <a className="start-training-btn" href="/tutorials">Start Training</a>
+          <button className="start-training-btn" onClick={() => navigate("/my-workouts")}>Start Training</button>
         </section>
       </main>
 

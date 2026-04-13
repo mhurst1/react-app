@@ -1,5 +1,6 @@
 // Matthew Hurst | CSCE 242
 
+import { Link } from "react-router-dom";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import NutritionCard from "../component/NutritionCard";
@@ -61,7 +62,7 @@ export default function Nutrition() {
             <li>✅ Manage Cravings and make healthy choices.</li>
             <li>✅ Hydration, timing, and wellness</li>
           </ul>
-          <button type="button">Get Started</button>
+          <Link to="/macro-tracker" className="get-started-btn">Get Started</Link>
         </section>
       </main>
 
